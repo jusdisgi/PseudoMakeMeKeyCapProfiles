@@ -10,7 +10,64 @@ use <./libraries/skin.scad>
 /*DES (Distorted Elliptical Saddle) Sculpted Profile for 6x3 and corne thumb
 Version 2: Eliptical Rectangle
 */
+//RC(0,0)
+//Left hand, Pinky Col, Top Row
+//R2 Edge cap, mirrored.
+translate([-36,17,0])
+mirror(x)
+keycap(
+    keyID  = 45, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+//Home Row left edge
+//R3 Edge cap, mirrored
+translate([-36,0,0])
+mirror(x)
+keycap(
+    keyID  = 44, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+//Bottom row, left edge
+//R2 Edge cap, mirrored
+translate([-36,-17,0])
+mirror(x)
+keycap(
+    keyID  = 43, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
 
+//Ring Column
+translate([-18,17,0])
+keycap(
+    keyID  = 2, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+// Home row standard
+translate([-18,0,0])
 keycap(
     keyID  = 1, //change profile refer to KeyParameters Struct
     Stem   = true, //tusn on shell and stems
@@ -19,9 +76,188 @@ keycap(
     crossSection  = false, // center cut to check internal
     homeDot = false, //turn on homedots
     homeRing = false, //turn on homing rings
-    Legends = false,
+    Legends = false
+);
+// Bottom row standard
+translate([-18,-17,0])
+keycap(
+    keyID  = 0, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
 );
 
+//Center col, top row
+translate([0,17,0])
+keycap(
+    keyID  = 2, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+
+// CENTER KEY
+// Home row standard
+keycap(
+    keyID  = 1, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+// Bottom row standard
+translate([0,-17,0])
+keycap(
+    keyID  = 0, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+//Index Column
+translate([18,17,0])
+keycap(
+    keyID  = 2, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+// Home row standard
+translate([18,0,0])
+keycap(
+    keyID  = 1, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+// Bottom row standard
+translate([18,-17,0])
+keycap(
+    keyID  = 0, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+
+//Inner Column
+//top row right edge
+translate([36,17,0])
+keycap(
+    keyID  = 45, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+//Home Row right edge
+//R3 Edge cap
+translate([36,0,0])
+keycap(
+    keyID  = 44, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+//Bottom row, right edge
+//R2 Edge cap
+translate([36,-17,0])
+keycap(
+    keyID  = 43, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+
+//Thumb1
+translate([30,-36,0])
+rotate(0,0,15)
+keycap(
+    keyID  = 47, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+//Thumb2
+translate([45,-45,0])
+rotate(0,0,30)
+keycap(
+    keyID  = 48, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+//Thumb3
+translate([60,-60,0])
+rotate(0,0,45)
+keycap(
+    keyID  = 49, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+
+
+//Cheat Sheet: key KeyIDs to know
+//0 Regular bottom alpha row (R4)
+//1 Regular home row (R3)
+//2 Regular top alpha row (R2)
+//3 Regular num row (R1)
+//43 Edge R4
+//44 Edge R3
+//45 Edge R2
+//46 Edge R1
+//47 Thumb
+//48 Thumb
+//49 Thumb
 
 //Parameters
 wallthickness = 1.2; // 1.5 for norm, 1.2 for cast master
@@ -42,70 +278,70 @@ keyParameters = //keyParameters[KeyID][ParameterID]
 //  BotWid, BotLen, TWDif, TLDif, keyh, WSft, LSft  XSkew, YSkew, ZSkew, WEx, LEx, CapR0i, CapR0f, CapR1i, CapR1f, CapREx, StemEx
 //Column high sculpt 3 row system
     //0~5
-    [17.16,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R4 8
-    [17.16,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R3 Home
-    [17.16,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R2
-    [17.16,  14.36,   6.5, 	 4.5, 8.75,    0,    0,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R3 deepdish
-    [17.16,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R5 mod
-    [17.16,  14.36,   6.5, 	 4.5, 15.0,    0,  -.5,    20,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R1 num
+    [17.16,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //0 R4 8
+    [17.16,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //1 R3 Home
+    [17.16,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //2 R2
+    [17.16,  14.36,   6.5, 	 4.5, 8.75,    0,    0,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //3 R3 deepdish
+    [17.16,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //4 R5 mod
+    [17.16,  14.36,   6.5, 	 4.5, 15.0,    0,  -.5,    20,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //5 R1 num
 
     //1.25u 6~9
-    [21.86,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R5
-    [21.86,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R4  // neuron 3 deg
-    [21.86,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,    -0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R3 Home
-    [21.86,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R2
+    [21.86,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //6 R5
+    [21.86,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //7 R4  // neuron 3 deg
+    [21.86,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,    -0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //8 R3 Home
+    [21.86,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //9 R2
     //1.5u 10~13
-    [26.66,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R5
-    [26.66,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R4
-    [26.66,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R3 Home
-    [26.66,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R2
+    [26.66,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //10 R5
+    [26.66,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //11 R4
+    [26.66,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //12 R3 Home
+    [26.66,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //13 R2
     //1.75u 14~17
-    [31.40,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R5
-    [31.40,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,    -0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R4
-    [31.40,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R3 Home
-    [31.40,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R2
+    [31.40,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //14 R5
+    [31.40,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,    -0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //15 R4
+    [31.40,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //16 R3 Home
+    [31.40,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //17 R2
     //2.0u  18~22
-    [36.26,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R5
-    [36.26,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R4
-    [36.26,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R3 Home
-    [36.26,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R2
-    [36.26,  14.36,   6.5, 	 4.5,   15,    0,  -.5,    20,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R1
+    [36.26,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //18 R5
+    [36.26,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //19 R4
+    [36.26,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //20 R3 Home
+    [36.26,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //21 R2
+    [36.26,  14.36,   6.5, 	 4.5,   15,    0,  -.5,    20,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //22 R1
     //2.25u 23~26
-    [40.96,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,    -0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R5
-    [40.96,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R4
-    [40.96,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R3 Home
-    [40.96,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R2
+    [40.96,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,    -0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //23 R5
+    [40.96,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //24 R4
+    [40.96,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //25 R3 Home
+    [40.96,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //26 R2
     //2.50u 27~30
-    [45.66,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R5  // neuron 2deg height to 10.5
-    [45.66,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R4
-    [45.66,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R3 Home
-    [45.66,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R2
+    [45.66,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //27 R5  // neuron 2deg height to 10.5
+    [45.66,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //28 R4
+    [45.66,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //29 R3 Home
+    [45.66,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //30 R2
     //2.75u 31~34
-    [50.66,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R5
-    [50.66,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R4
-    [50.66,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,    -4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R3 Home
-    [50.66,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R2
+    [50.66,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //31 R5
+    [50.66,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //32 R4
+    [50.66,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,    -4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //33 R3 Home
+    [50.66,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //34 R2
     //3.00u 34~37
-    [55.36,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,    -0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R5
-    [55.36,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R4
-    [55.36,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R3 Home
-    [55.36,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R2
+    [55.36,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,    -0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //35 R5
+    [55.36,  14.36,   6.5, 	 4.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //36 R4
+    [55.36,  14.36,   6.5, 	 4.5, 8.75,    0,   .5,     4,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //37 R3 Home
+    [55.36,  14.36,   6.5, 	 4.5, 9.75,    0,    0,   -13,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //38 R2
     //6.25u 39
-    [117.1,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,    -0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R5
+    [117.1,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,    -0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //39 R5
     //7.00u 40
-    [131.4,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,    -0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R5
+    [131.4,  14.36,   6.5, 	 4.5, 11.5,    0,    0,    -3,    -0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //40 R5
     //num pad vert  2u 41
-    [17.16,  36.26,   6.5, 	 6.5,10.00,    0,    0,    -5,     0,     0,   2,   2,      1,      6,      1,    3.5,     2,       2], //R4
-    [17.16,  36.26,   6.5, 	 6.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R4
+    [17.16,  36.26,   6.5, 	 6.5,10.00,    0,    0,    -5,     0,     0,   2,   2,      1,      6,      1,    3.5,     2,       2], //41 R4
+    [17.16,  36.26,   6.5, 	 6.5,10.55,    0,    0,     9,     0,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //42 R4
     //edge 43-46
-    [17.16,  14.36,   6.5, 	 4.5, 11.8,    0,    0,     9,    15,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R4
-    [17.16,  14.36,   6.5, 	 4.5,   10,    0,   .5,     4,    15,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R3
-    [17.16,  14.36,   6.5, 	 4.5,   11,    0,    0,   -13,    15,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R2
-    [17.16,  14.36,   6.5, 	 4.5, 15.3,    0,  -.5,   -20,    15,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //R1 num
+    [17.16,  14.36,   6.5, 	 4.5, 11.8,    0,    0,     9,    15,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //43 R4
+    [17.16,  14.36,   6.5, 	 4.5,   10,    0,   .5,     4,    15,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //44 R3
+    [17.16,  14.36,   6.5, 	 4.5,   11,    0,    0,   -13,    15,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //45 R2
+    [17.16,  14.36,   6.5, 	 4.5, 15.3,    0,  -.5,   -20,    15,     0,   2,   2,      1,      5,      1,    3.5,     2,       2], //46 R1 num
     //thumbs 47-49
-    [17.16,  14.36,     4,     4, 10.5,    0,    0,   -10,    -5,   -10,   2,   2,      1,      5,      1,      2,     2,       2],
-    [17.16,  14.36,     4,   3.5,  9.5,    0,    0,   -10,     0,     0,   2,   2,      1,      5,      1,      3,     2,       2],
-    [17.16,  14.36,     4,     4, 10.5,    0,    0,   -10,     8,    10,   2,   2,      1,      5,      1,      2,     2,       2],
+    [17.16,  14.36,     4,     4, 10.5,    0,    0,   -10,    -5,   -10,   2,   2,      1,      5,      1,      2,     2,       2], //47 
+    [17.16,  14.36,     4,   3.5,  9.5,    0,    0,   -10,     0,     0,   2,   2,      1,      5,      1,      3,     2,       2], //48
+    [17.16,  14.36,     4,     4, 10.5,    0,    0,   -10,     8,    10,   2,   2,      1,      5,      1,      2,     2,       2], //49
 ];
 
 dishParameters = //dishParameter[keyID][ParameteID]
