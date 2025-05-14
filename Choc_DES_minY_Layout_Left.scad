@@ -10,6 +10,86 @@ use <./libraries/skin.scad>
 /*DES (Distorted Elliptical Saddle) Sculpted Profile for 6x3 and corne thumb
 Version 2: Eliptical Rectangle
 */
+//RC(0,0)
+//Left hand, Pinky Col, Top Row
+//R2 Edge cap, mirrored.
+translate([-36,17,0])
+mirror(x)
+keycap(
+    keyID  = 45, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+//Home Row left edge
+//R3 Edge cap, mirrored
+translate([-36,0,0])
+mirror(x)
+keycap(
+    keyID  = 44, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+//Bottom row, left edge
+//R2 Edge cap, mirrored
+translate([-36,-17,0])
+mirror(x)
+keycap(
+    keyID  = 43, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+
+//Ring Column
+translate([-18,17,0])
+keycap(
+    keyID  = 2, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+// Home row standard
+translate([-18,0,0])
+keycap(
+    keyID  = 1, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+// Bottom row standard
+translate([-18,-17,0])
+keycap(
+    keyID  = 0, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
 
 //Center col, top row
 translate([0,17,0])
@@ -23,6 +103,7 @@ keycap(
     homeRing = false, //turn on homing rings
     Legends = false
 );
+
 // CENTER KEY
 // Home row standard
 keycap(
@@ -47,6 +128,123 @@ keycap(
     homeRing = false, //turn on homing rings
     Legends = false
 );
+//Index Column
+translate([18,17,0])
+keycap(
+    keyID  = 2, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+// Home row standard
+translate([18,0,0])
+keycap(
+    keyID  = 1, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+// Bottom row standard
+translate([18,-17,0])
+keycap(
+    keyID  = 0, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+
+//Inner Column
+//top row right edge
+translate([36,17,0])
+keycap(
+    keyID  = 45, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+//Home Row right edge
+//R3 Edge cap
+translate([36,0,0])
+keycap(
+    keyID  = 44, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+//Bottom row, right edge
+//R2 Edge cap
+translate([36,-17,0])
+keycap(
+    keyID  = 43, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+
+//Thumb1
+translate([30,-36,0])
+rotate(0,0,15)
+keycap(
+    keyID  = 47, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+//Thumb2
+translate([48,-10,0])
+rotate(0,0,30)
+keycap(
+    keyID  = 48, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+//Thumb3
+translate([66,-20,0])
+rotate(0,0,45)
+keycap(
+    keyID  = 49, //change profile refer to KeyParameters Struct
+    Stem   = true, //tusn on shell and stems
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+
 
 //Cheat Sheet: key KeyIDs to know
 //0 Regular bottom alpha row (R4)
