@@ -11,6 +11,20 @@ use <./libraries/skin.scad>
 Version 2: Eliptical Rectangle
 */
 
+//Cheat Sheet: key KeyIDs to know
+//0 Regular bottom alpha row (R4)
+//1 Regular home row (R3)
+//2 Regular top alpha row (R2)
+//3 Regular num row (R1)
+//43 Edge R4
+//44 Edge R3
+//45 Edge R2
+//46 Edge R1
+//47 Thumb
+//48 Thumb
+//49 Thumb
+
+
 //Center col, top row
 translate([0,17,0])
 keycap(
@@ -48,18 +62,6 @@ keycap(
     Legends = false
 );
 
-//Cheat Sheet: key KeyIDs to know
-//0 Regular bottom alpha row (R4)
-//1 Regular home row (R3)
-//2 Regular top alpha row (R2)
-//3 Regular num row (R1)
-//43 Edge R4
-//44 Edge R3
-//45 Edge R2
-//46 Edge R1
-//47 Thumb
-//48 Thumb
-//49 Thumb
 
 //Parameters
 wallthickness = 1.2; // 1.5 for norm, 1.2 for cast master

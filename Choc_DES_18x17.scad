@@ -11,49 +11,10 @@ use <./libraries/skin.scad>
 Version 2: Eliptical Rectangle
 */
 
-//Edge Bottom
-translate([18,-17,0])
+//
+translate([0,0,0])
 keycap(
-    keyID  = 43, //change profile refer to KeyParameters Struct
-    Stem   = true, //tusn on shell and stems
-    Dish   = true, //turn on dish cut
-    visualizeDish = false, // turn on debug visual of Dish
-    crossSection  = false, // center cut to check internal
-    homeDot = false, //turn on homedots
-    homeRing = false, //turn on homing rings
-    Legends = false
-);
-//Thumb1
-translate([12,-36,0])
-rotate([0,0,-15])
-keycap(
-    keyID  = 47, //change profile refer to KeyParameters Struct
-    Stem   = true, //tusn on shell and stems
-    Dish   = true, //turn on dish cut
-    visualizeDish = false, // turn on debug visual of Dish
-    crossSection  = false, // center cut to check internal
-    homeDot = false, //turn on homedots
-    homeRing = false, //turn on homing rings
-    Legends = false
-);
-//Thumb2
-translate([30,-44,0])
-rotate([0,0,-30])
-keycap(
-    keyID  = 48, //change profile refer to KeyParameters Struct
-    Stem   = true, //tusn on shell and stems
-    Dish   = true, //turn on dish cut
-    visualizeDish = false, // turn on debug visual of Dish
-    crossSection  = false, // center cut to check internal
-    homeDot = false, //turn on homedots
-    homeRing = false, //turn on homing rings
-    Legends = false
-);
-//Thumb3
-translate([46,-56,0])
-rotate([0,0,-45])
-keycap(
-    keyID  = 49, //change profile refer to KeyParameters Struct
+    keyID  = 4, //change profile refer to KeyParameters Struct
     Stem   = true, //tusn on shell and stems
     Dish   = true, //turn on dish cut
     visualizeDish = false, // turn on debug visual of Dish
@@ -68,7 +29,7 @@ keycap(
 //0 Regular bottom alpha row (R4)
 //1 Regular home row (R3)
 //2 Regular top alpha row (R2)
-//3 Regular num row (R1)
+//5 Regular num row (R1)
 //43 Edge R4
 //44 Edge R3
 //45 Edge R2
@@ -427,7 +388,7 @@ module keycap(
       #rotate([-XAngleSkew(keyID),YAngleSkew(keyID),ZAngleSkew(keyID)])
           translate([-.75,-4.5,KeyHeight(keyID)-DishHeightDif(keyID)+0.5])
           sphere(r = dotRadius, $fn=16);
-
+    }
     if (homeRing == true) {
         z = KeyHeight(keyID)-DishHeightDif(keyID) - 0.3;
 
@@ -441,7 +402,7 @@ module keycap(
             circle(r = .3, $fn = 100);
         }
     }
-  }
+  
 }
 //------------------stems
 module choc_stem(draftAng = 0) {
