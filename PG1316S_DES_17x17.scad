@@ -11,25 +11,6 @@ use <./libraries/skin.scad>
 Version 2: Eliptical Rectangle
 */
 
-//
-translate([0,0,0])
-difference() {
-  difference() {
-keycap(
-    keyID  = 0, //change profile refer to KeyParameters Struct
-    Stem   = false, //tusn on shell and stems
-    Dish   = true, //turn on dish cut
-    visualizeDish = false, // turn on debug visual of Dish
-    crossSection  = false, // center cut to check internal
-    homeDot = false, //turn on homedots
-    homeRing = false, //turn on homing rings
-    Legends = false
-);
-pg1316s_negspace();
-}
-translate([-10,-10,-20])cube(20);
-}
-
 //Cheat Sheet: key KeyIDs to know
 //0 Regular bottom alpha row (R4)
 //1 Regular home row (R3)
@@ -42,6 +23,22 @@ translate([-10,-10,-20])cube(20);
 //47 Thumb
 //48 Thumb
 //49 Thumb
+
+// Configure keycap to render here. You probably only want to
+// do one at a time unless your computer is real fast.
+keycap(
+    keyID  = 0, //change profile refer to KeyParameters Struct
+    Stem   = false, //Turn on shell and Choc v1 stem.
+    PG1316S = true, //Create PG1316S switch mounting slot. 
+    Dish   = true, //turn on dish cut
+    visualizeDish = false, // turn on debug visual of Dish
+    crossSection  = false, // center cut to check internal
+    homeDot = false, //turn on homedots
+    homeRing = false, //turn on homing rings
+    Legends = false
+);
+
+
 
 //Parameters
 wallthickness = 1.2; // 1.5 for norm, 1.2 for cast master
@@ -315,6 +312,7 @@ module keycap(
     visualizeDish = false,
     Dish = true,
     Stem = false,
+    PG1316S = false,
     crossSection = true,
     Legends = false,
     homeDot = false,
@@ -335,52 +333,63 @@ module keycap(
 
   //builds
   difference(){
-    union(){
-      difference(){
-        skin([for (i=[0:layers-1]) transform(translation(CapTranslation(i, keyID)) * rotation(CapRotation(i, keyID)), elliptical_rectangle(CapTransform(i, keyID), b = CapRoundness(i,keyID),fn=fn))]); //outer shell
+    difference(){
+      union(){
+        difference(){
+          skin([for (i=[0:layers-1]) transform(translation(CapTranslation(i, keyID)) * rotation(CapRotation(i, keyID)), elliptical_rectangle(CapTransform(i, keyID), b = CapRoundness(i,keyID),fn=fn))]); //outer shell
 
-        //Cut inner shell
+          //Cut inner shell
+          if (Stem == true) {
+            xScale = (BottomWidth(keyID) -wallthickness*2)/BottomWidth(keyID);
+            yScale = (BottomLength(keyID)-wallthickness*2)/BottomLength(keyID);
+            zScale = (KeyHeight(keyID)-DishHeightDif(keyID)-topthickness)/(KeyHeight(keyID)-DishHeightDif(keyID));
+            translate([0,0,-0.1])scale([xScale,yScale,zScale])keycap(keyID, crossSection = false, inner = true);
+          }
+        }
         if (Stem == true) {
-          xScale = (BottomWidth(keyID) -wallthickness*2)/BottomWidth(keyID);
-          yScale = (BottomLength(keyID)-wallthickness*2)/BottomLength(keyID);
-          zScale = (KeyHeight(keyID)-DishHeightDif(keyID)-topthickness)/(KeyHeight(keyID)-DishHeightDif(keyID));
-          translate([0,0,-0.1])scale([xScale,yScale,zScale])keycap(keyID, crossSection = false, inner = true);
+          choc_stem();
+          difference() {
+            translate([0,0,-.001])skin([for (i=[0:stemLayers-1]) transform(translation(StemTranslation(i,keyID))*rotation(StemRotation(i, keyID)), rounded_rectangle_profile(StemTransform(i, keyID),fn=fn,r=StemRadius(i, keyID)))]); //Transition Support for taller profile
+            cube([BottomWidth(keyID),BottomLength(keyID), stemHeightDelta*2], center=true);
+          }
         }
+
+      //cut for fonts and extra pattern for light?
       }
-      if (Stem == true) {
-        choc_stem();
-        difference() {
-          translate([0,0,-.001])skin([for (i=[0:stemLayers-1]) transform(translation(StemTranslation(i,keyID))*rotation(StemRotation(i, keyID)), rounded_rectangle_profile(StemTransform(i, keyID),fn=fn,r=StemRadius(i, keyID)))]); //Transition Support for taller profile
-          cube([BottomWidth(keyID),BottomLength(keyID), stemHeightDelta*2], center=true);
+
+      //Cuts
+
+      //Fonts
+      if(Legends ==  true){
+  //          #rotate([-XAngleSkew(keyID),YAngleSkew(keyID),ZAngleSkew(keyID)])
+        translate([0,0,KeyHeight(keyID)-5])linear_extrude(height =5)text( text = "A", font = "Calibri:style=Bold", size = 4, valign = "center", halign = "center" );
+        //  #rotate([-XAngleSkew(keyID),YAngleSkew(keyID),ZAngleSkew(keyID)])translate([0,-3.5,0])linear_extrude(height = 0.5)text( text = "Me", font = "Constantia:style=Bold", size = 3, valign = "center", halign = "center" );
         }
+    //Dish Shape
+      if(Dish == true){
+      if(visualizeDish == false){
+        translate([-TopWidShift(keyID),.00001-TopLenShift(keyID),KeyHeight(keyID)-DishHeightDif(keyID)])rotate([0,-YAngleSkew(keyID),0])rotate([0,-90+XAngleSkew(keyID),90-ZAngleSkew(keyID)])skin(FrontCurve);
+        translate([-TopWidShift(keyID),-TopLenShift(keyID),KeyHeight(keyID)-DishHeightDif(keyID)])rotate([0,-YAngleSkew(keyID),0])rotate([0,-90-XAngleSkew(keyID),270-ZAngleSkew(keyID)])skin(BackCurve);
+      } else {
+        #translate([-TopWidShift(keyID),.00001-TopLenShift(keyID),KeyHeight(keyID)-DishHeightDif(keyID)]) rotate([0,-YAngleSkew(keyID),0])rotate([0,-90+XAngleSkew(keyID),90-ZAngleSkew(keyID)])skin(FrontCurve);
+        #translate([-TopWidShift(keyID),-TopLenShift(keyID),KeyHeight(keyID)-DishHeightDif(keyID)])rotate([0,-YAngleSkew(keyID),0])rotate([0,-90-XAngleSkew(keyID),270-ZAngleSkew(keyID)])skin(BackCurve);
       }
-    //cut for fonts and extra pattern for light?
     }
-
-    //Cuts
-
-    //Fonts
-    if(Legends ==  true){
-//          #rotate([-XAngleSkew(keyID),YAngleSkew(keyID),ZAngleSkew(keyID)])
-      translate([0,0,KeyHeight(keyID)-5])linear_extrude(height =5)text( text = "A", font = "Calibri:style=Bold", size = 4, valign = "center", halign = "center" );
-      //  #rotate([-XAngleSkew(keyID),YAngleSkew(keyID),ZAngleSkew(keyID)])translate([0,-3.5,0])linear_extrude(height = 0.5)text( text = "Me", font = "Constantia:style=Bold", size = 3, valign = "center", halign = "center" );
+      if(crossSection == true) {
+        translate([0,-15,-.1])cube([15,30,20]);
+  //      translate([-15.1,-15,-.1])cube([15,30,20]);
       }
-   //Dish Shape
-    if(Dish == true){
-     if(visualizeDish == false){
-      translate([-TopWidShift(keyID),.00001-TopLenShift(keyID),KeyHeight(keyID)-DishHeightDif(keyID)])rotate([0,-YAngleSkew(keyID),0])rotate([0,-90+XAngleSkew(keyID),90-ZAngleSkew(keyID)])skin(FrontCurve);
-      translate([-TopWidShift(keyID),-TopLenShift(keyID),KeyHeight(keyID)-DishHeightDif(keyID)])rotate([0,-YAngleSkew(keyID),0])rotate([0,-90-XAngleSkew(keyID),270-ZAngleSkew(keyID)])skin(BackCurve);
-     } else {
-      #translate([-TopWidShift(keyID),.00001-TopLenShift(keyID),KeyHeight(keyID)-DishHeightDif(keyID)]) rotate([0,-YAngleSkew(keyID),0])rotate([0,-90+XAngleSkew(keyID),90-ZAngleSkew(keyID)])skin(FrontCurve);
-      #translate([-TopWidShift(keyID),-TopLenShift(keyID),KeyHeight(keyID)-DishHeightDif(keyID)])rotate([0,-YAngleSkew(keyID),0])rotate([0,-90-XAngleSkew(keyID),270-ZAngleSkew(keyID)])skin(BackCurve);
-     }
-   }
-     if(crossSection == true) {
-       translate([0,-15,-.1])cube([15,30,20]);
-//      translate([-15.1,-15,-.1])cube([15,30,20]);
-     }
 
+    }
+    if (PG1316S == true) {
+      union() {
+        pg1316s_negspace();
+        translate([-10,-10,-20])cube(20);
+      }
+    }
   }
+
+
   //Homing dot
     if(homeDot == true){
       // center dot
