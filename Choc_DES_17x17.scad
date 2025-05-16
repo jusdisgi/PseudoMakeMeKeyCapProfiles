@@ -15,7 +15,7 @@ Version 2: Eliptical Rectangle
 translate([0,0,0])
 keycap(
     keyID  = 1, //change profile refer to KeyParameters Struct
-    Stem   = false, //tusn on shell and stems
+    Stem   = true, //tusn on shell and stems
     Dish   = true, //turn on dish cut
     visualizeDish = false, // turn on debug visual of Dish
     crossSection  = false, // center cut to check internal
